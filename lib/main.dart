@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 // import 'counter/counter_page.dart';
-import 'counter_codegen/counter_codegen_page.dart';
+// import 'counter_codegen/counter_codegen_page.dart';
+import 'bmi/bmi_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CounterCodeGenPage(),
+      home: const BMIPage(),
     );
   }
 }
