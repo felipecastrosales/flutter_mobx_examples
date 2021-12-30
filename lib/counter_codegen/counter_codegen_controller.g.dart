@@ -62,6 +62,28 @@ mixin _$CounterCodeGenController on _CounterCodeGenControllerBase, Store {
   }
 
   @override
+  void changeName() {
+    final _$actionInfo = _$_CounterCodeGenControllerBaseActionController
+        .startAction(name: '_CounterCodeGenControllerBase.changeName');
+    try {
+      return super.changeName();
+    } finally {
+      _$_CounterCodeGenControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void rollbackName() {
+    final _$actionInfo = _$_CounterCodeGenControllerBaseActionController
+        .startAction(name: '_CounterCodeGenControllerBase.rollbackName');
+    try {
+      return super.rollbackName();
+    } finally {
+      _$_CounterCodeGenControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 counter: ${counter},

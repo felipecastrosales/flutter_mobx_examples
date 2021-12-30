@@ -25,9 +25,21 @@ abstract class _CounterCodeGenControllerBase with Store {
   @action
   void increment() {
     counter++;
+  }
+
+  @action
+  void changeName() {
     fullName = fullName.copyWith(
       firstName: 'Felipe',
       lastName: 'Sales',
+    );
+  }
+
+  @action
+  void rollbackName() {
+    fullName = fullName.copyWith(
+      firstName: 'first',
+      lastName: 'last',
     );
   }
 }
