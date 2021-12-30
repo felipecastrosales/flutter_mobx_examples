@@ -18,16 +18,18 @@ class CounterPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            const Text('You have pushed the button this many times:'),
+            Observer(
+              builder: (_) => Text('${controller.counter}'),
             ),
             Observer(
-              builder: (_) {
-                return Text(
-                  '${controller.counter}',
-                  style: Theme.of(context).textTheme.headline4,
-                );
-              },
+              builder: (_) => Text(controller.fullName.firstName),
+            ),
+            Observer(
+              builder: (_) => Text(controller.fullName.lastName),
+            ),
+            Observer(
+              builder: (_) => Text(controller.number),
             ),
           ],
         ),
