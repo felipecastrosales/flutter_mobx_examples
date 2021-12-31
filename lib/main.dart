@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 // import 'counter/counter_page.dart';
 // import 'counter_codegen/counter_codegen_page.dart';
-import 'bmi/bmi_page.dart';
+// import 'bmi/bmi_page.dart';
+import 'observables/list/observable_list_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BMIPage(),
+      home: const ObservableListPage(),
     );
   }
 }
