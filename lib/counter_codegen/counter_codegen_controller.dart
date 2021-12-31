@@ -1,8 +1,6 @@
-import 'dart:html';
-
 import 'package:mobx/mobx.dart';
 
-import 'model/full_name.dart';
+import 'package:mobx_bmi/model/full_name.dart';
 
 part 'counter_codegen_controller.g.dart';
 
