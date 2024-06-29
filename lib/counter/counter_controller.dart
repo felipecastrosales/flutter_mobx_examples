@@ -44,13 +44,13 @@ class CounterController {
 }
 
 class FullName {
-  String firstName;
-  String lastName;
-
   FullName({
     required this.firstName,
     required this.lastName,
   });
+
+  final String lastName;
+  final String firstName;
 
   FullName copyWith({
     String? firstName,

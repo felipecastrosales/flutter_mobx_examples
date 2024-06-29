@@ -5,11 +5,12 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'counter_controller.dart';
 
 class CounterPage extends StatelessWidget {
-  final controller = CounterController();
-  CounterPage({Key? key}) : super(key: key);
+  const CounterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = CounterController();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Counter - MobX'),
@@ -35,7 +36,7 @@ class CounterPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: controller.increment,
+        onPressed: controller.increment.call,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

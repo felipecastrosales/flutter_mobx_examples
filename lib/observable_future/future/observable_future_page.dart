@@ -5,7 +5,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'observable_future_controller.dart';
 
 class ObservableFuturePage extends StatefulWidget {
-  const ObservableFuturePage({Key? key}) : super(key: key);
+  const ObservableFuturePage({super.key});
 
   @override
   State<ObservableFuturePage> createState() => _ObservableFuturePageState();

@@ -44,7 +44,9 @@ abstract class ObservableModelControllerBase with Store {
 
   @action
   void removeProducts() {
-    products.removeAt(0);
+    if (products.isNotEmpty) {
+      products.removeAt(0);
+    }
   }
 
   @action

@@ -1,11 +1,11 @@
 class FullName {
-  String firstName;
-  String lastName;
-
   FullName({
     required this.firstName,
     required this.lastName,
   });
+
+  final String firstName;
+  final String lastName;
 
   FullName copyWith({
     String? firstName,

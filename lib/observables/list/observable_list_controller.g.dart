@@ -6,10 +6,11 @@ part of 'observable_list_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
-mixin _$ObservableListController on _ObservableListControllerBase, Store {
-  final _$productsAtom = Atom(name: '_ObservableListControllerBase.products');
+mixin _$ObservableListController on ObservableListControllerBase, Store {
+  late final _$productsAtom =
+      Atom(name: 'ObservableListControllerBase.products', context: context);
 
   @override
   ObservableList<ProductModel> get products {
@@ -24,39 +25,39 @@ mixin _$ObservableListController on _ObservableListControllerBase, Store {
     });
   }
 
-  final _$_ObservableListControllerBaseActionController =
-      ActionController(name: '_ObservableListControllerBase');
+  late final _$ObservableListControllerBaseActionController =
+      ActionController(name: 'ObservableListControllerBase', context: context);
 
   @override
   void loadProducts() {
-    final _$actionInfo = _$_ObservableListControllerBaseActionController
-        .startAction(name: '_ObservableListControllerBase.loadProducts');
+    final _$actionInfo = _$ObservableListControllerBaseActionController
+        .startAction(name: 'ObservableListControllerBase.loadProducts');
     try {
       return super.loadProducts();
     } finally {
-      _$_ObservableListControllerBaseActionController.endAction(_$actionInfo);
+      _$ObservableListControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void addProducts() {
-    final _$actionInfo = _$_ObservableListControllerBaseActionController
-        .startAction(name: '_ObservableListControllerBase.addProducts');
+    final _$actionInfo = _$ObservableListControllerBaseActionController
+        .startAction(name: 'ObservableListControllerBase.addProducts');
     try {
       return super.addProducts();
     } finally {
-      _$_ObservableListControllerBaseActionController.endAction(_$actionInfo);
+      _$ObservableListControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void removeProducts() {
-    final _$actionInfo = _$_ObservableListControllerBaseActionController
-        .startAction(name: '_ObservableListControllerBase.removeProducts');
+    final _$actionInfo = _$ObservableListControllerBaseActionController
+        .startAction(name: 'ObservableListControllerBase.removeProducts');
     try {
       return super.removeProducts();
     } finally {
-      _$_ObservableListControllerBaseActionController.endAction(_$actionInfo);
+      _$ObservableListControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 

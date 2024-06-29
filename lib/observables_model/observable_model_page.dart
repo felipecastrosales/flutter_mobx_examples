@@ -5,7 +5,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'observable_model_controller.dart';
 
 class ObservableModelPage extends StatefulWidget {
-  const ObservableModelPage({Key? key}) : super(key: key);
+  const ObservableModelPage({super.key});
 
   @override
   State<ObservableModelPage> createState() => _ObservableListPModelageState();

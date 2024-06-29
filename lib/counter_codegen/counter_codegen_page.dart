@@ -8,7 +8,7 @@ import 'package:mobx/mobx.dart';
 import 'counter_codegen_controller.dart';
 
 class CounterCodeGenPage extends StatefulWidget {
-  const CounterCodeGenPage({Key? key}) : super(key: key);
+  const CounterCodeGenPage({super.key});
 
   @override
   State<CounterCodeGenPage> createState() => _CounterCodeGenPageState();
