@@ -1,16 +1,35 @@
-# mobx_bmi
+# Flutter MOBX Examples
 
-A new Flutter project.
+A collection of examples of how to use MOBX with Flutter.
+
+## Examples
+
+- Observable List
+- Observable Future
+- Observable Model
+- Counter
+- Counter with Code Generation
+- BMI Calculator
+
+## Demo
+
+https://github.com/felipecastrosales/flutter_mobx_examples/assets/59374587/6ec86899-4a1f-4d38-ae72-a8a09d8511e3
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+```
+First of all, correctly configure the Flutter development environment on your machine,
+see https://flutter.dev/docs/get-started/install
 
-A few resources to get you started if this is your first Flutter project:
+- Clone this repository:
+$ git clone https://github.com/felipecastrosales/flutter_mobx_examples
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Enter in directory:
+$ cd flutter_mobx_examples
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- For install dependencies:
+$ flutter pub get
+
+- Run the app: 
+$ flutter run
+```
