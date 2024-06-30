@@ -1,11 +1,12 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 part 'bmi_controller.g.dart';
 
-class BMIController = _BMIControllerBase with _$BMIController;
+class BMIController = BMIControllerBase with _$BMIController;
 
-abstract class _BMIControllerBase with Store {
+abstract class BMIControllerBase with Store {
   @observable
   var bmi = 0.0;
 
@@ -23,10 +24,12 @@ abstract class _BMIControllerBase with Store {
     try {
       bmi = 0;
       error = null;
-      await Future.delayed(
-        const Duration(seconds: 1),
-      );
       bmi = weight / pow(height, 2);
+
+      // this bmi calc is: 0.0021604938271604936
+
+      debugPrint('how make this bmi calc is: $bmi | $weight / $height^2');
+      // how make this bmi calc is: 0.0021604938271604936
 
       if (bmi > 30) {
         throw Exception();

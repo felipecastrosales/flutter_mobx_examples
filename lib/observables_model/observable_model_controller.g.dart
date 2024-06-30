@@ -6,10 +6,11 @@ part of 'observable_model_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$ObservableModelController on ObservableModelControllerBase, Store {
-  final _$productsAtom = Atom(name: 'ObservableModelControllerBase.products');
+  late final _$productsAtom =
+      Atom(name: 'ObservableModelControllerBase.products', context: context);
 
   @override
   ObservableList<ProductStore> get products {
@@ -24,8 +25,8 @@ mixin _$ObservableModelController on ObservableModelControllerBase, Store {
     });
   }
 
-  final _$ObservableModelControllerBaseActionController =
-      ActionController(name: 'ObservableModelControllerBase');
+  late final _$ObservableModelControllerBaseActionController =
+      ActionController(name: 'ObservableModelControllerBase', context: context);
 
   @override
   void loadProducts() {

@@ -4,10 +4,10 @@ import 'package:mobx_bmi/model/full_name.dart';
 
 part 'counter_codegen_controller.g.dart';
 
-class CounterCodeGenController = _CounterCodeGenControllerBase
+class CounterCodeGenController = CounterCodeGenControllerBase
     with _$CounterCodeGenController;
 
-abstract class _CounterCodeGenControllerBase with Store {
+abstract class CounterCodeGenControllerBase with Store {
   @observable
   int counter = 0;
 

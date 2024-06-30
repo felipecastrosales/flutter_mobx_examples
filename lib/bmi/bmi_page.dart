@@ -1,18 +1,16 @@
-import 'package:flutter/material.dart';
-
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:intl/intl.dart';
 import 'package:mobx/mobx.dart';
-
+import 'package:mobx_bmi/bmi/bmi_controller.dart';
 import 'package:mobx_bmi/widgets/bmi_gauge.dart';
-import 'bmi_controller.dart';
 
 class BMIPage extends StatefulWidget {
-  const BMIPage({Key? key}) : super(key: key);
+  const BMIPage({super.key});
 
   @override
-  _BMIPageState createState() => _BMIPageState();
+  State<BMIPage> createState() => _BMIPageState();
 }
 
 class _BMIPageState extends State<BMIPage> {
@@ -40,7 +38,6 @@ class _BMIPageState extends State<BMIPage> {
     reactionDisposer.add(reactionErrorDisposer);
   }
 
-
   @override
   void dispose() {
     for (var reaction in reactionDisposer) {
@@ -51,6 +48,16 @@ class _BMIPageState extends State<BMIPage> {
 
   @override
   Widget build(BuildContext context) {
+    final formatters = [
+      CurrencyTextInputFormatter(
+        NumberFormat.currency(
+          locale: 'pt_BR',
+          symbol: '',
+          decimalDigits: 2,
+        ),
+      ),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('BMI | MobX'),
@@ -63,7 +70,9 @@ class _BMIPageState extends State<BMIPage> {
             child: Column(
               children: [
                 Observer(
-                  builder: (_) => Center(child: BMIGauge(bmi: controller.bmi)),
+                  builder: (_) => Center(
+                    child: BMIGauge(bmi: controller.bmi),
+                  ),
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
@@ -72,18 +81,11 @@ class _BMIPageState extends State<BMIPage> {
                     if (value == null || value.isEmpty) {
                       return 'Mandatory Weight';
                     }
+                    return null;
                   },
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(labelText: 'Weight'),
-                  inputFormatters: [
-                    CurrencyTextInputFormatter(
-                      locale: 'pt_BR',
-                      symbol: '',
-                      decimalDigits: 2,
-                      turnOffGrouping: true,
-                    ),
-                  ],
-                  onChanged: (String value) {},
+                  inputFormatters: formatters,
                 ),
                 TextFormField(
                   controller: heightController,
@@ -91,33 +93,26 @@ class _BMIPageState extends State<BMIPage> {
                     if (value == null || value.isEmpty) {
                       return 'Mandatory Height';
                     }
+                    return null;
                   },
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(labelText: 'Height'),
-                  inputFormatters: [
-                    CurrencyTextInputFormatter(
-                      locale: 'pt_BR',
-                      symbol: '',
-                      decimalDigits: 2,
-                      turnOffGrouping: true,
-                    ),
-                  ],
-                  onChanged: (String value) {},
+                  inputFormatters: formatters,
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
                   child: const Text('Calculate BMI'),
                   onPressed: () {
-                    var formValid = formKey.currentState?.validate() ?? false;
-                    if (formValid) {
-                      var formatter = NumberFormat.simpleCurrency(
-                        locale: 'pt_BR',
-                        decimalDigits: 2,
+                    final isFormValid =
+                        formKey.currentState?.validate() ?? false;
+                    if (isFormValid) {
+                      final weight = double.parse(
+                        weightController.text.replaceAll(',', '.'),
                       );
-                      double weight =
-                          formatter.parse(weightController.text) as double;
-                      double height =
-                          formatter.parse(heightController.text) as double;
+                      final height = double.parse(
+                        heightController.text.replaceAll(',', '.'),
+                      );
+
                       controller.calculateBMI(
                         weight: weight,
                         height: height,

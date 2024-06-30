@@ -5,7 +5,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'observable_list_controller.dart';
 
 class ObservableListPage extends StatefulWidget {
-  const ObservableListPage({Key? key}) : super(key: key);
+  const ObservableListPage({super.key});
 
   @override
   State<ObservableListPage> createState() => _ObservableListPageState();

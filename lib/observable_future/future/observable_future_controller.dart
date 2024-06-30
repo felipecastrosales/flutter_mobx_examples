@@ -2,10 +2,10 @@ import 'package:mobx/mobx.dart';
 
 part 'observable_future_controller.g.dart';
 
-class ObservableFutureController = _ObservableFutureControllerBase
+class ObservableFutureController = ObservableFutureControllerBase
     with _$ObservableFutureController;
 
-abstract class _ObservableFutureControllerBase with Store {
+abstract class ObservableFutureControllerBase with Store {
   @observable
   var nameFuture = ObservableFuture.value('');
   // var nameFuture = Future.value('').asObservable();

@@ -5,11 +5,12 @@ import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'bmi_gauge_range.dart';
 
 class BMIGauge extends StatelessWidget {
-  final double bmi;
   const BMIGauge({
-    Key? key,
+    super.key,
     required this.bmi,
-  }) : super(key: key);
+  });
+
+  final double bmi;
 
   @override
   Widget build(BuildContext context) {

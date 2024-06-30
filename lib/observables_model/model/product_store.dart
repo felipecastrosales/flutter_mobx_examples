@@ -4,18 +4,17 @@ import 'package:mobx_bmi/model/product_model.dart';
 
 part 'product_store.g.dart';
 
-class ProductStore = _ProductStoreBase with _$ProductStore;
+class ProductStore = ProductStoreBase with _$ProductStore;
 
-abstract class _ProductStoreBase with Store {
+abstract class ProductStoreBase with Store {
   @observable
   ProductModel product;
 
   @observable
   bool selected;
 
-  _ProductStoreBase({
+  ProductStoreBase({
     required this.product,
     required this.selected,
   });
-
 }

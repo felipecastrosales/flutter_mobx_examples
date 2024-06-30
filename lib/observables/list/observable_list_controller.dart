@@ -4,10 +4,10 @@ import 'package:mobx_bmi/model/product_model.dart';
 
 part 'observable_list_controller.g.dart';
 
-class ObservableListController = _ObservableListControllerBase
+class ObservableListController = ObservableListControllerBase
     with _$ObservableListController;
 
-abstract class _ObservableListControllerBase with Store {
+abstract class ObservableListControllerBase with Store {
   @observable
   var products = <ProductModel>[].asObservable();
   // var products = <ProductModel>[];
@@ -32,6 +32,8 @@ abstract class _ObservableListControllerBase with Store {
 
   @action
   void removeProducts() {
-    products.removeAt(0);
+    if (products.isNotEmpty) {
+      products.removeAt(0);
+    }
   }
 }
